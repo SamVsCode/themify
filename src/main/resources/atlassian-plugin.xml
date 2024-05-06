@@ -10,4 +10,17 @@
     <!-- add our i18n resource -->
     <resource type="i18n" name="i18n" location="themify" />
 
+    <web-section name="Settings" i18n-name-key="settings.name" key="themify-admin-section"
+        location="admin_plugins_menu" weight="50">
+        <description key="settings.description">Settings for Themify Plugin</description>
+        <label key="Themify Configuration"></label>
+    </web-section>
+
+    <web-item name="Settings" i18n-name-key="settings.name" key="settings"
+        section="admin_plugins_menu/themify-admin-section" weight="1">
+        <description key="settings.description">The Settings Plugin</description>
+        <label>Settings</label>
+        <link linkId="settings-link">/plugins/servlet/com.samvscode.themify/settings</link>
+    </web-item>
+
 </atlassian-plugin>
