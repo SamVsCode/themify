@@ -30,4 +30,15 @@
         <description key="themify-react-servlet.description">The Themify React Servlet Plugin</description>
         <url-pattern>/com.samvscode.themify/*</url-pattern>
     </servlet>
+
+    <web-resource key="entrypoint-themify-settings-ui">
+        <context>com.samvscode.themify.settings</context>
+        <dependency>com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path</dependency>
+        <dependency>com.atlassian.plugins.atlassian-plugins-webresource-rest:web-resource-manager</dependency>
+        <resource type="download" name="themify-settings.js"
+            location="js/themify-settings.js" />
+        <resource type="download" name="themify-settings.js.map"
+            location="js/themify-settings.js.map" />
+    </web-resource>
+
 </atlassian-plugin>
