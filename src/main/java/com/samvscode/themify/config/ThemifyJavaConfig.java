@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Import;
 
 import static com.atlassian.plugins.osgi.javaconfig.OsgiServices.exportOsgiService;
 import static com.atlassian.plugins.osgi.javaconfig.OsgiServices.importOsgiService;
+import com.atlassian.templaterenderer.TemplateRenderer;
 
 @Configuration
 @Import({
@@ -30,6 +31,11 @@ public class ThemifyJavaConfig {
     @Bean
     public ThemifyComponent themifyComponent(ApplicationProperties applicationProperties) {
         return new ThemifyComponentImpl(applicationProperties);
+    }
+
+    @Bean
+    public TemplateRenderer templateRenderer() {
+        return importOsgiService(TemplateRenderer.class);
     }
 
     // Exports ThemifyComponent as an OSGi service
